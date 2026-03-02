@@ -27,7 +27,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 'janta-ko-aawaj',
-    title: 'Janta Ko Aawaj – AI-powered E-Governance System',
+    title: 'Janta Ko Aawaj –  C2G2C E-Governance Complaint System (Final Year Project)',
     description: 'Full-stack civic engagement platform with ML-based spam detection and threshold alert automation',
     longDescription: 'E-governance system integrating machine learning for spam detection using Naive Bayes, Logistic Regression, and SVM. Features automated threshold alerts at 25%, 50%, and 75% complaint volumes.',
     techStack: ['Next.js', 'Django', 'Python', 'ML', 'Naive Bayes', 'Logistic Regression', 'SVM'],

@@ -17,7 +17,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
@@ -26,19 +26,18 @@ export default function Hero() {
             <span className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-8">
               AI Engineer & Full-Stack Developer
             </span>
-          </motion.div>
+          </motion.div> */}
+
+
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 leading-tight text-white"
           >
-            Building Intelligent Systems
+            Bipasna Dulal
             <br />
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent">
-              with AI & Data
-            </span>
           </motion.h1>
 
           <motion.p
@@ -47,9 +46,9 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            AI-focused Computer Science student building scalable ML-powered
-            applications. Specializing in deep learning, computer vision, and
-            intelligent web systems.
+            Computer Science undergraduate interested in machine learning,
+            deep learning, and user-centered design. I build practical AI-powered
+            applications while continuously learning and experimenting.
           </motion.p>
 
           <motion.div
@@ -58,23 +57,29 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
             className="flex flex-wrap gap-4 justify-center mb-12"
           >
-            <Link href='#projects'>
+            <Link href="#projects">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-0"
+                className="bg-white text-black hover:bg-gray-200 transition-colors duration-200 px-6"
               >
                 View Projects
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-blue-500/30 bg-transparent text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/50"
+            <a
+              href="/BipasnaDulal.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Download Resume
-            </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-gray-600 bg-transparent text-gray-300 hover:bg-gray-800 hover:text-white transition-colors duration-200"
+              >
+                Download Resume
+              </Button>
+            </a>
           </motion.div>
 
           <motion.div
@@ -91,7 +96,7 @@ export default function Hero() {
               <motion.a
                 key={social.label}
                 href={social.href}
-                target={social.target} // ← add this
+                target={social.target}
                 rel={social.target === '_blank' ? 'noopener noreferrer' : undefined} // ← add this for security
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -125,3 +130,5 @@ export default function Hero() {
     </section>
   );
 }
+
+
