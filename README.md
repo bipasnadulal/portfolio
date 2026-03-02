@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Bipasna Dulal - AI Engineer Portfolio
 
 A modern, professional portfolio website showcasing AI/ML projects, skills, and experience. Built with Next.js, TypeScript, and cutting-edge web technologies.
@@ -157,3 +158,6 @@ This project is open source and available for personal use.
 ---
 
 Built with passion for AI and modern web development.
+=======
+# portfolio
+>>>>>>> 794edb5a0cdd31116845bb947696a682b8def6a4
