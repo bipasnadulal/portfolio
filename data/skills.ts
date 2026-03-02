@@ -1,0 +1,43 @@
+export const skillsData = {
+  'AI/ML': [
+    'TensorFlow',
+    'Keras',
+    'Scikit-learn',
+    'CNNs',
+    'Naive Bayes',
+    'Logistic Regression',
+    'SVM',
+    'Image Augmentation',
+    'Gradio',
+  ],
+  'Programming': [
+    'Python',
+    'Java',
+    'C++',
+    'C#',
+    'JavaScript',
+    'TypeScript',
+  ],
+  'Web & Backend': [
+    'Next.js',
+    'React',
+    'Django',
+    'FastAPI',
+    'HTML/CSS',
+    'PHP',
+  ],
+  'Databases': [
+    'MySQL',
+    'SQLite',
+    'Oracle',
+    'SQL Server',
+    'PostgreSQL',
+  ],
+  'Tools': [
+    'Git',
+    'Figma',
+    '.NET Framework',
+    'VS Code',
+    'Jupyter',
+  ],
+};
