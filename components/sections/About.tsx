@@ -42,9 +42,7 @@ export default function About() {
           <h2 className="text-4xl sm:text-5xl font-semibold mb-4 text-white">
             About Me
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            AI-focused Computer Science undergraduate with an interest in intelligent systems and design
-          </p>
+
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">

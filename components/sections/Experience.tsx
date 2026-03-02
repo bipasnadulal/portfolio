@@ -17,12 +17,9 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Professional <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Experience</span>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
+            Experience
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Combining AI engineering with user-centered design
-          </p>
         </motion.div>
 
         <div className="space-y-8">
@@ -33,85 +30,52 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative"
+              className="relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-
-              <div className="relative bg-gradient-to-br from-slate-900/80 to-slate-900/40 backdrop-blur-sm rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 p-8">
-                <div className="flex items-start justify-between mb-6">
+              <div className="bg-slate-900 border border-slate-700 rounded-xl p-6">
+                <div className="flex items-start justify-between mb-4">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20">
-                      <Briefcase className="w-6 h-6 text-purple-400" />
+                    <div className="p-2 bg-white rounded-full">
+                      <Briefcase className="w-5 h-5 text-gray-500" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-1">
+                      <h3 className="text-2xl font-semibold text-white mb-1">
                         {exp.role}
                       </h3>
-                      <p className="text-purple-400 font-semibold mb-1">
-                        {exp.company}
-                      </p>
-                      <p className="text-gray-500 text-sm">
-                        {exp.location}
-                      </p>
+                      <p className="text-white font-medium mb-1">{exp.company}</p>
+                      <p className="text-gray-400 text-sm">{exp.location}</p>
                     </div>
                   </div>
-                  <div className="flex flex-col items-end gap-2">
-                    <span className="text-blue-400 font-semibold">
-                      {exp.period}
-                    </span>
+                  <div className="flex flex-col items-end gap-1 text-sm font-medium text-gray-200">
+                    <span>{exp.period}</span>
                     {exp.current && (
-                      <span className="px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-semibold">
+                      <span className="px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/30 text-green-400">
                         Current
                       </span>
                     )}
                   </div>
                 </div>
 
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  {exp.description}
-                </p>
+                <p className="text-gray-400 mb-4 text-sm leading-relaxed">{exp.description}</p>
 
-                <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-wider">
-                    Key Contributions
-                  </h4>
-                  <ul className="space-y-2">
-                    {exp.highlights.map((highlight, i) => (
-                      <motion.li
-                        key={i}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 + i * 0.05 }}
-                        className="flex items-start gap-3"
-                      >
-                        <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400 text-sm leading-relaxed">
-                          {highlight}
-                        </span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="list-disc list-inside space-y-1 text-gray-400 text-sm">
+                  {exp.highlights.map((highlight, i) => (
+                    <motion.li
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 + i * 0.05 }}
+                    >
+                      {highlight}
+                    </motion.li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-12 text-center"
-        >
-          <div className="inline-block bg-gradient-to-br from-slate-900/80 to-slate-900/40 backdrop-blur-sm px-6 py-4 rounded-xl border border-purple-500/20">
-            <p className="text-gray-400">
-              <span className="text-purple-400 font-semibold">Expertise:</span> AI Engineer who understands system design, user experience, and real-world implementation
-            </p>
-          </div>
-        </motion.div>
       </div>
-    </section>
+    </section >
   );
 }

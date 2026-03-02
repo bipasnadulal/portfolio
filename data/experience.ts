@@ -12,19 +12,18 @@ export interface Experience {
 export const experienceData: Experience[] = [
   {
     id: 'fusemachines',
-    role: 'UI/UX Design Intern',
+    role: 'UI/UX Design Intern | Figma',
     company: 'Fusemachines',
     location: 'Kathmandu, Nepal',
-    period: '2025',
-    description: 'Designed and optimized user interfaces for AI-powered HR systems, focusing on workflow efficiency and user experience.',
+    period: 'Sept 2025 - Dec 2025',
+    description: 'Worked on designing and optimizing user interfaces for AI-powered HR systems, focusing on workflow efficiency and user experience.',
     highlights: [
-      'Designed comprehensive HR system workflows',
-      'Created candidate pipeline management interface',
-      'Developed user roles and activity logging systems',
-      'Collaborated with developers for seamless implementation',
-      'Applied UX principles to AI-powered features',
+      'Designed key workflows for job management, candidate pipeline, user roles, and activity tracking.',
+      'Created low & high-fidelity wireframes, mood boards, user flows, and reusable component systems.',
+      'Enhanced usability of candidate movement, interview stages, and error handling.',
+      'Collaborated with developers, QA, and mentors to deliver practical, implementation-ready designs.'
     ],
-    current: true,
+    current: false,
   },
 ];
 
@@ -34,7 +33,6 @@ export interface Education {
   institution: string;
   location: string;
   period: string;
-  description: string;
 }
 
 export const educationData: Education[] = [
@@ -44,6 +42,6 @@ export const educationData: Education[] = [
     institution: 'Tribhuvan University (NCCS)',
     location: 'Kathmandu, Nepal',
     period: '2021 - Present',
-    description: 'Specialized in AI/ML, Deep Learning, and software engineering. Focus on building intelligent systems and integrating machine learning into real-world applications.',
+    
   },
 ];
