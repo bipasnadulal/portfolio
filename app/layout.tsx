@@ -5,28 +5,50 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Bipasna Dulal - AI Engineer & Full-Stack Developer',
-  description: 'AI-focused Computer Science student building intelligent systems with deep learning, machine learning, and full-stack development. Specializing in CNN-based image classification, NLP, and AI-powered web applications.',
-  keywords: ['AI Engineer', 'Machine Learning', 'Deep Learning', 'Full-Stack Developer', 'Computer Vision', 'Neural Networks', 'Next.js', 'Python', 'TensorFlow'],
+  title: 'Bipasna Dulal',
+  description:
+    'AI-focused Computer Science undergraduate specializing in deep learning, CNN-based image classification, and AI-powered full-stack systems. Experienced in TensorFlow, Scikit-learn, Next.js, and Django with 99.5% CNN model accuracy in real-world projects.',
+
+  keywords: [
+    'Bipasna Dulal',
+    'AI Engineer',
+    'Machine Learning',
+    'Deep Learning',
+    'CNN Image Classification',
+    'TensorFlow',
+    'Scikit-learn',
+    'Next.js Developer',
+    'Django Developer',
+    'Full-Stack AI Developer',
+    'Computer Vision',
+    'Spam Detection ML',
+    'Gradio',
+    'FastAPI'
+  ],
+
   authors: [{ name: 'Bipasna Dulal' }],
+
   openGraph: {
-    title: 'Bipasna Dulal - AI Engineer & Full-Stack Developer',
-    description: 'Building intelligent systems with AI & Data',
+    title: 'Bipasna Dulal | AI & Machine Learning Engineer',
+    description:
+      'Building intelligent AI systems, CNN image classifiers, and ML-powered civic platforms with modern full-stack technologies.',
     type: 'website',
     locale: 'en_US',
     images: [
       {
-        url: 'https://bolt.new/static/og_default.png',
+        url: 'Hero.png',
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
-    title: 'Bipasna Dulal - AI Engineer',
-    description: 'Building intelligent systems with AI & Data',
+    title: 'Bipasna Dulal | AI Engineer',
+    description:
+      'Deep Learning • Computer Vision • AI-Powered Web Applications',
     images: [
       {
-        url: 'https://bolt.new/static/og_default.png',
+        url: 'Hero.png',
       },
     ],
   },

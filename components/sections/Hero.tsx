@@ -97,12 +97,12 @@ export default function Hero() {
                 key={social.label}
                 href={social.href}
                 target={social.target}
-                rel={social.target === '_blank' ? 'noopener noreferrer' : undefined} // ← add this for security
-                whileHover={{ scale: 1.1, y: -2 }}
+                rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
+                whileHover={{ scale: 1.08, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 rounded-full bg-slate-800/50 border border-blue-500/20 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-200"
+                className="p-3 rounded-full bg-slate-800/40 border border-slate-700 hover:bg-slate-700/40 hover:border-slate-600 transition-all duration-200"
               >
-                <social.icon className="w-5 h-5 text-gray-400 hover:text-blue-400" />
+                <social.icon className="w-5 h-5 text-gray-400 hover:text-white transition-colors duration-200" />
               </motion.a>
             ))}
           </motion.div>
@@ -122,7 +122,7 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="w-1.5 h-1.5 bg-blue-400 rounded-full"
+              className="w-1.5 h-1.5 bg-white rounded-full"
             />
           </motion.div>
         </motion.div>
