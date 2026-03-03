@@ -5,7 +5,7 @@
 This repository contains the source code for my personal portfolio website.
 The portfolio was built using modern web technologies and refined over time to improve structure, design, and usability. It showcases my projects, skills, experience, and contact information in a clean and minimal format.
 
-## 🎯 Features
+## Features
 
 - Responsive, dark-themed design
 - Minimal UI with subtle animations
@@ -14,7 +14,7 @@ The portfolio was built using modern web technologies and refined over time to i
 - Complete metadata and semantic HTML
 - Easy to update and extend
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 13 (App Router)
 - **Language**: TypeScript
@@ -24,7 +24,7 @@ The portfolio was built using modern web technologies and refined over time to i
 - **Icons**: Lucide React
 - EmailJS (contact form)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── app/
@@ -52,7 +52,7 @@ The portfolio was built using modern web technologies and refined over time to i
     └── utils.ts            # Utility functions
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -82,7 +82,7 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📝 Customization
+## Customization
 
 ### Update Personal Information
 
@@ -103,7 +103,7 @@ npm run dev
 - Tailwind configuration: `tailwind.config.ts`
 - Component styles: Individual component files
 
-## 🚢 Deployment
+## Deployment
 
 ### Vercel (Recommended)
 
@@ -118,6 +118,6 @@ npm run build
 npm start
 ```
 
-## 📄 License
+## License
 
 This project is open source and available for personal use.
