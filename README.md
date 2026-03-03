@@ -103,46 +103,6 @@ npm run dev
 - Tailwind configuration: `tailwind.config.ts`
 - Component styles: Individual component files
 
-## 🎨 Design Philosophy
-
-This portfolio is designed to represent an AI Engineer's digital workspace:
-
-- **Professional**: Clean, modern design suitable for international opportunities
-- **Technical**: Showcases depth in ML and integration capabilities
-- **Futuristic**: Subtle AI-inspired animations and effects
-- **Accessible**: Optimized for readability and user experience
-
-## 🌟 Key Sections
-
-### Hero
-
-Large bold heading with CTA buttons and animated background
-
-### About
-
-Professional summary with timeline of education and current role
-
-### Skills
-
-Categorized technical skills with animated cards (AI/ML, Programming, Web, Databases, Tools)
-
-### Projects
-
-Featured AI projects with metrics, tech stacks, and links:
-
-- Bird Feather Classification (99.5% accuracy CNN)
-- Janta Ko Aawaj (E-Governance with ML)
-- Smart Calculator (Handwritten AI Recognition)
-- Anu Kitchen (UI/UX Design)
-
-### Experience
-
-Professional experience at Fusemachines as UI/UX Design Intern
-
-### Contact
-
-Contact form and information for collaboration opportunities
-
 ## 🚢 Deployment
 
 ### Vercel (Recommended)
@@ -161,19 +121,3 @@ npm start
 ## 📄 License
 
 This project is open source and available for personal use.
-
-## 👤 Author
-
-**Bipasna Dulal**
-
-- Location: Kathmandu, Nepal
-- Focus: AI, Machine Learning, Deep Learning
-- Role: AI Engineer & Full-Stack Developer
-
----
-
-# Built with passion for AI and modern web development.
-
-# portfolio
-
-> > > > > > > 794edb5a0cdd31116845bb947696a682b8def6a4
