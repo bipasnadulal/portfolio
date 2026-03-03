@@ -1,16 +1,18 @@
 <<<<<<< HEAD
-# Bipasna Dulal - AI Engineer Portfolio
 
-A modern, professional portfolio website showcasing AI/ML projects, skills, and experience. Built with Next.js, TypeScript, and cutting-edge web technologies.
+# Personal Portfolio Website
+
+This repository contains the source code for my personal portfolio website.
+The portfolio was built using modern web technologies and refined over time to improve structure, design, and usability. It showcases my projects, skills, experience, and contact information in a clean and minimal format.
 
 ## 🎯 Features
 
-- **Modern Design**: Dark theme with neon blue and purple gradients, glassmorphism effects
-- **Animated Background**: Interactive particle network visualization
-- **Smooth Animations**: Framer Motion powered transitions and scroll animations
-- **Fully Responsive**: Optimized for all devices from mobile to desktop
-- **SEO Optimized**: Complete metadata and semantic HTML
-- **Fast Performance**: Next.js App Router with optimized loading
+- Responsive, dark-themed design
+- Minimal UI with subtle animations
+- Project, skills, and experience sections
+- Working contact form
+- Complete metadata and semantic HTML
+- Easy to update and extend
 
 ## 🛠 Tech Stack
 
@@ -20,11 +22,13 @@ A modern, professional portfolio website showcasing AI/ML projects, skills, and 
 - **UI Components**: Shadcn/UI
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
+- EmailJS (contact form)
 
 ## 📁 Project Structure
 
 ```
 ├── app/
+    |__ icon.svg            #favicon
 │   ├── layout.tsx          # Root layout with metadata
 │   ├── page.tsx            # Main page component
 │   └── globals.css         # Global styles
@@ -58,17 +62,20 @@ A modern, professional portfolio website showcasing AI/ML projects, skills, and 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -108,25 +115,32 @@ This portfolio is designed to represent an AI Engineer's digital workspace:
 ## 🌟 Key Sections
 
 ### Hero
+
 Large bold heading with CTA buttons and animated background
 
 ### About
+
 Professional summary with timeline of education and current role
 
 ### Skills
+
 Categorized technical skills with animated cards (AI/ML, Programming, Web, Databases, Tools)
 
 ### Projects
+
 Featured AI projects with metrics, tech stacks, and links:
+
 - Bird Feather Classification (99.5% accuracy CNN)
 - Janta Ko Aawaj (E-Governance with ML)
 - Smart Calculator (Handwritten AI Recognition)
 - Anu Kitchen (UI/UX Design)
 
 ### Experience
+
 Professional experience at Fusemachines as UI/UX Design Intern
 
 ### Contact
+
 Contact form and information for collaboration opportunities
 
 ## 🚢 Deployment
@@ -151,13 +165,15 @@ This project is open source and available for personal use.
 ## 👤 Author
 
 **Bipasna Dulal**
+
 - Location: Kathmandu, Nepal
 - Focus: AI, Machine Learning, Deep Learning
 - Role: AI Engineer & Full-Stack Developer
 
 ---
 
-Built with passion for AI and modern web development.
-=======
+# Built with passion for AI and modern web development.
+
 # portfolio
->>>>>>> 794edb5a0cdd31116845bb947696a682b8def6a4
+
+> > > > > > > 794edb5a0cdd31116845bb947696a682b8def6a4
