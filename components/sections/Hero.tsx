@@ -51,7 +51,7 @@ export default function Hero() {
             alt="Profile Picture"
             width={300}
             height={400}
-            priority
+
           />
         </div>
         <motion.div
