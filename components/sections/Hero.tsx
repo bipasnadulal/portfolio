@@ -47,7 +47,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center flex gap-20">
         <div>
           <Image
-            src="me.jpg"
+            src="me.JPG"
             alt="Profile Picture"
             width={300}
             height={400}
