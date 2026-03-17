@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
+import { motion } from 'framer-motion';
 
 
 const montserrat = Montserrat({
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Bipasna Dulal' }],
 
   openGraph: {
-    title: 'Bipasna Dulal | AI & Machine Learning Engineer',
+    title: 'Bipasna Dulal | AI & Machine Learning',
     description:
       'Building intelligent AI systems, CNN image classifiers, and ML-powered civic platforms with modern full-stack technologies.',
     type: 'website',
@@ -65,7 +66,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        {children}
+      </body>
     </html>
   );
 }

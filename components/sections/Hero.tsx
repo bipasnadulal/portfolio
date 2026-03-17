@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Mail, Linkedin, ArrowRight } from 'lucide-react';
+import { Github, Mail, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import Image from 'next/image';
 
 

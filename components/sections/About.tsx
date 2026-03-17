@@ -140,42 +140,24 @@ export default function About() {
               ))}
             </div>
 
-            {/* <h3 className="text-2xl font-semibold text-white">
-              Experience
-            </h3>
-          
             <motion.div
-              initial={{ opacity: 0, x: 12 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="relative"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
             >
-              <div className="absolute -left-[9px] top-2 w-2 h-2 rounded-full bg-slate-400" />
-
-              <div className="p-4 rounded-md border border-slate-800 bg-slate-900/40">
-                <div className="flex items-start justify-between mb-1">
-                  <h4 className="text-base font-medium text-white">
-                    UI/UX Design Intern
-                  </h4>
-                  <span className="text-xs text-gray-400">
-                    2025
-                  </span>
-                </div>
-
-                <p className="text-sm text-gray-300">
-                  Fusemachines
-                </p>
-                <p className="text-xs text-gray-500 mb-2">
-                  Kathmandu, Nepal
-                </p>
-
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Worked on designing workflows and interfaces for an internal HR system,
-                  focusing on usability, clarity, and consistent user experience.
-                </p>
-              </div>
-            </motion.div> */}
+              <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="w-6 h-10 rounded-full border-2 border-blue-500/30 flex justify-center p-2"
+              >
+                <motion.div
+                  animate={{ y: [0, 12, 0] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  className="w-1.5 h-1.5 bg-white rounded-full"
+                />
+              </motion.div>
+            </motion.div>
 
           </motion.div>
         </div>
