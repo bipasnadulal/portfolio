@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Featured Projects */}
+
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {projectsData
             .filter((project) => project.featured)
@@ -47,6 +47,7 @@ export default function Projects() {
                     width={800}
                     height={300}
                     className="w-full h-50 object-cover"
+                    priority
                   />
                 )}
 

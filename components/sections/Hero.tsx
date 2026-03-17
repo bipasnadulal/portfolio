@@ -44,7 +44,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-slate-950 to-slate-950" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center flex gap-20">
+      <div className="flex flex-col-reverse md:flex-row items-center gap-10 text-center md:text-left">
         <div>
           <Image
             src="me.JPG"
