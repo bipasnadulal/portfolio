@@ -271,7 +271,7 @@ export default function Contact() {
                   <Github className="w-5 h-5 text-gray-400 hover:text-white transition-colors" />
                 </a>
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/bipasna_dulal/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-full hover:bg-slate-800/30 transition-colors"

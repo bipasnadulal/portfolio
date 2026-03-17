@@ -1,50 +1,82 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Mail, Linkedin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 export default function Hero() {
+  const text = "Hey, It's me";
+  const [displayedText, setDisplayedText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    if (index < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev + text[index]);
+        setIndex(index + 1);
+      }, 100);
+
+      return () => clearTimeout(timeout);
+    } else {
+      const restart = setTimeout(() => {
+        setDisplayedText("");
+        setIndex(0);
+      }, 2000)
+
+      return () => clearTimeout(restart);
+    }
+  }, [index]);
+
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+
+    return () => clearInterval(cursorInterval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-slate-950 to-slate-950" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center flex gap-20">
+        <div>
+          <Image
+            src="me.jpg"
+            alt="Profile Picture"
+            width={300}
+            height={400}
+            priority
+          />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="mb-6"
-          >
-            <span className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-8">
-              AI Engineer & Full-Stack Developer
-            </span>
-          </motion.div> */}
-
-
 
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 leading-tight text-white"
+            className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 leading-tight text-white text-left"
           >
-            Bipasna Dulal
+            {displayedText}
+            <span className="ml-1">{showCursor ? "|" : " "}</span>
             <br />
+            Bipasna Dulal
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed text-left"
           >
             Computer Science undergraduate interested in machine learning,
             deep learning, and user-centered design. I build practical AI-powered
@@ -55,18 +87,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex flex-wrap gap-4 justify-center mb-12"
+            className="flex flex-wrap gap-4 mb-12"
           >
-            <Link href="#projects">
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-200 transition-colors duration-200 px-6"
-              >
-                View Projects
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
-
             <a
               href="/BipasnaDulal.pdf"
               target="_blank"
@@ -75,7 +97,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-gray-600 bg-transparent text-gray-300 hover:bg-gray-800 hover:text-white transition-colors duration-200"
+                className="bg-white text-black hover:bg-gray-200 transition-colors duration-200 px-6"
               >
                 Download Resume
               </Button>
@@ -86,7 +108,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="flex gap-6 justify-center"
+            className="flex gap-6"
           >
             {[
               { icon: Github, href: 'https://github.com/bipasnadulal', target: '_blank', label: 'GitHub' },

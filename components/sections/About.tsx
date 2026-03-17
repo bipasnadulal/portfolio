@@ -54,17 +54,15 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-semibold text-white">
-              Professional Summary
-            </h3>
 
-            <p className="text-gray-400 leading-relaxed">
+
+            <p className="text-gray-200 leading-relaxed">
               I’m Bipasna Dulal, a final-year Computer Science undergraduate based in Kathmandu, Nepal.
               I’m currently exploring artificial intelligence through academic and personal projects,
               with a focus on building practical and understandable systems.
             </p>
 
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-200 leading-relaxed">
               My experience includes developing deep learning models for image classification,
               experimenting with machine learning techniques, and creating full-stack applications
               where AI supports real functionality. Alongside this, my UI/UX design internship has
@@ -117,7 +115,7 @@ export default function About() {
                   transition={{ delay: index * 0.15 }}
                   className="relative"
                 >
-                  <div className="absolute -left-[9px] top-2 w-2 h-2 rounded-full bg-slate-400" />
+                  {/* <div className="absolute -left-[9px] top-2 w-2 h-2 rounded-full bg-slate-400" /> */}
 
                   <div className="p-4 rounded-md border border-slate-800 bg-slate-900/40">
                     <div className="flex items-start justify-between mb-1">

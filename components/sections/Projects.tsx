@@ -166,14 +166,14 @@ export default function Projects() {
                         asChild
                         variant="ghost"
                         size="sm"
-                        className="p-2 text-gray-400 hover:text-white hover:bg-slate-800/50 rounded-md"
+                        className="p-2 text-gray-300 hover:text-white hover:bg-slate-800/50 rounded-md"
                       >
                         <a
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Github className="w-4 h-4" />
+                          <Github className="w-5 h-5" />
                         </a>
                       </Button>
                     )}
@@ -183,14 +183,14 @@ export default function Projects() {
                         asChild
                         variant="ghost"
                         size="sm"
-                        className="p-2 text-gray-400 hover:text-white hover:bg-slate-800/50 rounded-md"
+                        className="p-2 text-gray-300 hover:text-white hover:bg-slate-800/50 rounded-md"
                       >
                         <a
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <ExternalLink className="w-4 h-4" />
+                          <ExternalLink className="w-5 h-5" />
                         </a>
                       </Button>
                     )}

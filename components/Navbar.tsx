@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X} from 'lucide-react';
 
 
 export default function Navbar() {
@@ -36,7 +36,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-center relative">
 
 
-        <div className="hidden md:flex items-center gap-6 text-sm">
+        <div className="hidden md:flex items-center gap-6 text-base">
 
           {navItems.map((item) => (
             <a

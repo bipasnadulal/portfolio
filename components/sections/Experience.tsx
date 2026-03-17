@@ -43,7 +43,7 @@ export default function Experience() {
                         {exp.role}
                       </h3>
                       <p className="text-white font-medium mb-1">{exp.company}</p>
-                      <p className="text-gray-400 text-sm">{exp.location}</p>
+                      <p className="text-gray-300 text-sm">{exp.location}</p>
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-1 text-sm font-medium text-gray-200">
@@ -56,9 +56,9 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <p className="text-gray-400 mb-4 text-sm leading-relaxed">{exp.description}</p>
+                <p className="text-gray-300 mb-4 text-sm leading-relaxed">{exp.description}</p>
 
-                <ul className="list-disc list-inside space-y-1 text-gray-400 text-sm">
+                <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm">
                   {exp.highlights.map((highlight, i) => (
                     <motion.li
                       key={i}
