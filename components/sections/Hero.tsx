@@ -1,155 +1,182 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import { Github, Mail, Linkedin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-
 
 export default function Hero() {
-  const text = "Hey, It's me";
-  const [displayedText, setDisplayedText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
+  const nameRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const isSnappedRef = useRef(false);
 
   useEffect(() => {
-    if (index < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText((prev) => prev + text[index]);
-        setIndex(index + 1);
-      }, 100);
 
-      return () => clearTimeout(timeout);
-    } else {
-      const restart = setTimeout(() => {
-        setDisplayedText("");
-        setIndex(0);
-      }, 2000)
+    const applyHeroState = (name: HTMLDivElement) => {
+      name.style.transition = 'all 0.5s ease';
 
-      return () => clearTimeout(restart);
-    }
-  }, [index]);
+      name.style.fontSize = 'clamp(48px, 7vw, 100px)';
+      name.style.fontWeight = '300';
+      name.style.letterSpacing = '0.25em';
 
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, 500);
+      name.style.top = '50%';
+      name.style.left = '50%';
+      name.style.transform = 'translate(-50%, -50%)';
+    };
 
-    return () => clearInterval(cursorInterval);
+    const applyNavState = (name: HTMLDivElement) => {
+      name.style.transition = 'all 0.4s ease';
+
+      name.style.fontSize = '14px';
+      name.style.fontWeight = '600';
+      name.style.letterSpacing = '0.15em';
+
+
+      name.style.top = '30px';
+      name.style.left = '32px';
+      name.style.transform = 'translate(0, -50%)';
+    };
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      const name = nameRef.current;
+      const nav = navRef.current;
+      if (!name || !nav) return;
+
+      const shouldSnap = scrollY > 5;
+
+
+      nav.style.opacity = shouldSnap ? '1' : '0';
+      nav.style.pointerEvents = shouldSnap ? 'all' : 'none';
+
+      if (shouldSnap !== isSnappedRef.current) {
+        isSnappedRef.current = shouldSnap;
+
+        if (shouldSnap) {
+          applyNavState(name);
+        } else {
+          applyHeroState(name);
+        }
+      }
+    };
+
+    const initHeroState = () => {
+      const name = nameRef.current;
+      if (!name) return;
+
+      name.style.transition = 'none';
+
+      name.style.fontSize = 'clamp(48px, 7vw, 100px)';
+      name.style.fontWeight = '300';
+      name.style.letterSpacing = '0.25em';
+
+      name.style.top = '50%';
+      name.style.left = '50%';
+      name.style.transform = 'translate(-50%, -50%)';
+    };
+
+    initHeroState();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
+  const socials = [
+    { icon: Github, href: 'https://github.com/bipasnadulal', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/bipasna-dulal-0110bd/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:bipasna.dulal75@gmail.com', label: 'Email' },
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-slate-950 to-slate-950" />
+    <>
+      <section className="relative w-full h-screen">
+        <img
+          src="/me.JPG"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex flex-col md:flex-row items-center gap-10 text-center md:text-left">
-        <div>
-          <Image
-            src="me.JPG"
-            alt="Profile Picture"
-            width={300}
-            height={400}
+        <div className="absolute top-0 inset-x-0 h-1/2 flex flex-col items-center justify-center gap-6 px-6 text-center z-10">
+          <div className="flex items-center gap-5">
+            {socials.map(({ icon: Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="p-3 rounded-full border border-white/60 hover:bg-white/10 hover:border-white transition-all duration-200"
+              >
+                <Icon size={18} strokeWidth={1.5} className="text-white" />
+              </a>
+            ))}
+          </div>
 
-          />
-        </div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-
-          <motion.h1
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 leading-tight text-white text-left"
-          >
-            {displayedText}
-            <span className="ml-1">{showCursor ? "|" : " "}</span>
-            <br />
-            Bipasna Dulal
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed text-left"
-          >
+          <p className="text-white text-lg leading-relaxed tracking-wide font-medium max-w-[700px]">
             Computer Science undergraduate interested in machine learning,
             deep learning, and user-centered design. I build practical AI-powered
             applications while continuously learning and experimenting.
-          </motion.p>
+          </p>
+        </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-wrap gap-4 mb-12"
+        <div className="absolute bottom-0 inset-x-0 h-1/2 flex items-center justify-center px-6 z-10">
+          <a
+            href="/BipasnaDulal.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2 border border-white/60 text-white text-xs tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-200"
           >
-            <a
-              href="/BipasnaDulal.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-white text-black hover:bg-gray-200 transition-colors duration-200 px-6"
-              >
-                Download Resume
-              </Button>
-            </a>
-          </motion.div>
+            Download Resume
+          </a>
+        </div>
+      </section>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="flex gap-6"
-          >
-            {[
-              { icon: Github, href: 'https://github.com/bipasnadulal', target: '_blank', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://www.linkedin.com/in/bipasna-dulal-0110bd/', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto: bipasna.dulal75@gmail.com', label: 'Email' },
-            ].map((social) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target={social.target}
-                rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
-                whileHover={{ scale: 1.08, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="p-3 rounded-full bg-slate-800/40 border border-slate-700 hover:bg-slate-700/40 hover:border-slate-600 transition-all duration-200"
-              >
-                <social.icon className="w-5 h-5 text-gray-400 hover:text-white transition-colors duration-200" />
-              </motion.a>
-            ))}
-          </motion.div>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-6 h-10 rounded-full border-2 border-blue-500/30 flex justify-center p-2"
-          >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="w-1.5 h-1.5 bg-white rounded-full"
-            />
-          </motion.div>
-        </motion.div>
+      <div
+        ref={nameRef}
+        className="fixed z-40 pointer-events-none select-none"
+        style={{
+          color: 'white',
+          textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        Bipasna Dulal
       </div>
-    </section>
+
+
+      <nav
+        ref={navRef}
+        className="fixed top-0 left-0 right-0 z-30 flex items-center justify-end bg-slate-950 border-b border-slate-800 px-8"
+        style={{
+          height: '60px',
+          opacity: 0,
+          pointerEvents: 'none',
+          transition: 'opacity 0.3s ease',
+        }}
+      >
+        <div className="hidden md:flex items-center gap-8">
+          {[
+            { name: 'About', href: '#about' },
+            { name: 'Skills', href: '#skills' },
+            { name: 'Projects', href: '#projects' },
+            { name: 'Experience', href: '#experience' },
+            { name: 'Contact', href: '#contact' },
+          ].map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-white text-xs tracking-widest uppercase hover:text-white transition-colors duration-200"
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </nav>
+    </>
   );
 }
-
-
